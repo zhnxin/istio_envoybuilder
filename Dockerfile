@@ -42,7 +42,7 @@ RUN cd /root  &&\
 
 RUN mkdir -p /root/go/src/istio.io &&\
     cd /root/go/src/istio.io &&\
-    git clone https://gitee.com/mirrors_istio/proxy.git &&\
+    git clone https://github.com/istio/proxy.git &&\
     cd proxy &&\
     git checkout "tags/${ISTIO_TAG}" &&\
     bash /root/bazel_setup_clang.sh "/root/${EXTRACTED_CLANG_LLVM}" &&\
