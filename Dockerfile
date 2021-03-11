@@ -37,7 +37,7 @@ RUN cd /root  &&\
     dpkg -i bazel_2.2.0-linux-x86_64.deb &&\
     wget "https://releases.llvm.org/9.0.0/${EXTRACTED_CLANG_LLVM}.tar.xz" &&\
     tar -xvJf "${EXTRACTED_CLANG_LLVM}.tar.xz" &&\
-    wget "https://github.com/istio/envoy/archive/${ENVOY_SHA}.tar.gz" &&\
+    wget -O "envoy-${ENVOY_SHA}.tar.gz" "https://github.com/istio/envoy/archive/${ENVOY_SHA}.tar.gz" &&\
     tar -zxvf "envoy-${ENVOY_SHA}.tar.gz" &&\
     mv "envoy-${ENVOY_SHA}" envoy &&\
     rm "${EXTRACTED_CLANG_LLVM}.tar.xz" bazel_2.2.0-linux-x86_64.deb "envoy-${ENVOY_SHA}.tar.gz"
