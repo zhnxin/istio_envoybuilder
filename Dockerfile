@@ -50,4 +50,6 @@ RUN mkdir -p /root/go/src/istio.io &&\
     git checkout "tags/${ISTIO_TAG}" &&\
     bash /root/bazel_setup_clang.sh "/root/${EXTRACTED_CLANG_LLVM}" &&\
     sed -i 's|build_envoy:|fetch_envoy:\n\texport PATH=$(PATH) CC=$(CC) CXX=$(CXX) \&\& bazel $(BAZEL_STARTUP_ARGS) fetch $(BAZEL_BUILD_ARGS) //src/envoy:envoy\n\nbuild_envoy:|g'  Makefile.core.mk &&\
-    make fetch_envoy
+    make build_envoy &&\
+    make clean
+    
