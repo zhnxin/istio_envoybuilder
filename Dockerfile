@@ -3,7 +3,7 @@ FROM ubuntu:bionic as builder
 WORKDIR /root
 
 ENV EXTRACTED_CLANG_LLVM="clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04" \
-    PATH="$HOME/go/bin:/root/${EXTRACTED_CLANG_LLVM}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/llvm-9/bin" \
+    PATH="/root/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/root/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin" \
     CC=clang \
     CXX=clang++
 
